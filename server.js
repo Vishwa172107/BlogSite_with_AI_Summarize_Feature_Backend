@@ -276,7 +276,7 @@ app.post("/summarize", verifyToken, async (req, res) => {
         console.log(req.body)
         if (!req.body.text) return res.status(400).json({ error: "No text provided" });
 
-        const summary = await axios.post("http://localhost:8000/post/text-summary", { text: req.body.text });
+        const summary = await axios.post(process.env.SUMMARIZATION_API, { text: req.body.text });
         res.json(summary.data);
     } catch (error) {
         console.error(error);
@@ -289,7 +289,7 @@ app.post("/summary", async (req, res) => {
         console.log(req.body.text)
         if (!req.body.text) return res.status(400).json({ error: "No text provided" });
 
-        const summary = await axios.post("http://localhost:8000/post/text-summary", { text: req.body.text });
+        const summary = await axios.post(process.env.SUMMARIZATION_API, { text: req.body.text });
         res.json(summary.data);
     } catch (error) {
         console.error(error);
