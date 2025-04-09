@@ -1,0 +1,10 @@
+[{
+    "_id": 1,
+    "title": "Post1",
+    "content": "This is the content of post 1"
+},
+{
+    "_id": 2,
+    "title": "Post2",
+    "content": "This is the content of post 2"
+}]
